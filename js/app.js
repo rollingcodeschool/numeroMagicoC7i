@@ -13,7 +13,18 @@ function generarNumeroAleatorio() {
     console.log(numeroAdivinar);
 }
 
-function adivinar(){
+function adivinar(e){
     //aqui va la logica para verificar si lo que ingreso el usuario en el input es igual, menor o mayor que el numeroAdivinar
+    e.preventDefault();
+    let numeroIngresado = parseInt(document.querySelector('input').value);
+    console.log(numeroIngresado);
+    if (numeroAdivinar === numeroIngresado) {
+        alert("Felicitaciones usted adivino el Numero.");
+        formulario.reset();
+      } else if (numeroAdivinar < numeroIngresado) {
+        alert("El numero es menor al que usted ingreso.");
+      } else{
+          alert("El numero es mayor al que usted ingreso.")
+      }
 }
  
